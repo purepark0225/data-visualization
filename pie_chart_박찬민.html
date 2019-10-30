@@ -32,11 +32,11 @@
             fontSize: 40,
             fontName: 'Arial'
           },
-          // animation: {
-          //   duration: 5000, // 1000 ms = 1 s
-          //   startup: true,
-          //   easing: 'out'
-          // },
+          animation: {
+            duration: 5000, // 1000 ms = 1 s
+            startup: true,
+            easing: 'out'
+          },
           annotations: {
             boxStyle: {
               // Color of the box outline.
@@ -50,18 +50,17 @@
             }
           },
           legend: {
-            position: 'bottom',
+            position: 'labeled',
             textStyle: {
               fontSize: 20
             }
-          },
-          pieSliceText: 'label-and-percentage',
-        
+          },        
           slices: {  1: {offset: 0.2},
                       3: {offset: 0.3},
                       4: {offset: 0.3},
                       },
           colors: ['blue', 'black', 'brown', 'green', 'grey', 'red', 'yellow', '#d0db9e'],
+          is3D: true
         };
         //var chart1 = new google.visualization.LineChart(document.getElementById('chart_div1'));
         //chart1.draw(data1, options1);

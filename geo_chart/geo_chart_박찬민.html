@@ -29,9 +29,33 @@
         // then, the remaining process is same to the previous chart drawing assignments.
         var data = google.visualization.arrayToDataTable(arrayData);
 
-        var options = {};
+        var options = {
+          colorAxis: {colors: ['#CCFFDD', '#CCCCDD', '#CCAADD']},
+          tooltip: {trigger: 'selection'}
+        };
 
         var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.setAction({
+          id: 'increase',
+          text: '20 more people',
+          action: function() {
+            data.setCell(chart.getSelection()[0].row, 1,
+                         data.getValue(chart.getSelection()[0].row, 1) + 20);
+            chart.draw(data, options);
+          }
+        });
+
+        chart.setAction({
+          id: 'decrease',
+          text: '20 fewer people',
+          action: function() {
+            data.setCell(chart.getSelection()[0].row, 1,
+                         data.getValue(chart.getSelection()[0].row, 1) - 20);
+            chart.draw(data, options);
+          }
+        });
+
 
         chart.draw(data, options);
       }

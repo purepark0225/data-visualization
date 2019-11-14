@@ -6,7 +6,7 @@
 
     <script type="text/javascript">
       google.charts.load('current', {
-        'packages':['corechart', 'geochart'],
+        'packages':['geochart'],
         // Note: you will need to get a mapsApiKey for your project.
         // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
         'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
@@ -19,12 +19,12 @@
           // read a .csv file and save the data in arrayData variable
           var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
           // send arrayData to 'draw' function
-          draw(RegionsMap)
+          draw(arrayData)
         });
       };
       
 
-      function draw(RegionsMap) {
+      function draw(arrayData) {
         var data = google.visualization.arrayToDataTable(arrayData);
 
         var options = {};

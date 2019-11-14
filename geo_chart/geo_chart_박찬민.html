@@ -6,7 +6,7 @@
 
     <script type="text/javascript">
       google.charts.load('current', {
-        'packages':['geochart'],
+        'packages':['corechart', 'line', 'geochart'],
         // Note: you will need to get a mapsApiKey for your project.
         // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
         'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
@@ -25,6 +25,8 @@
       
 
       function draw(arrayData) {
+        // (3) convert arrayData into DataTable form
+        // then, the remaining process is same to the previous chart drawing assignments.
         var data = google.visualization.arrayToDataTable(arrayData);
 
         var options = {};

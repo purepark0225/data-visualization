@@ -30,30 +30,11 @@
         var data = google.visualization.arrayToDataTable(arrayData);
 
         var options = {
-          colorAxis: {colors: ['#CCFFDD', '#CCCCDD', '#CCAADD']},
-          tooltip: {trigger: 'selection'}
+          colorAxis: {colors: ['#CCFFDD', '#CCCCDD', '#CCAADD']}
         };
 
         var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-        
-        chart.setAction({
-          id: 'sample',
-          text: 'See sample book',
-          action: function() {
-            selection = chart.getSelection();
-            switch (selection[0].row) {
-              case 0: alert('Ender\'s Game'); break;
-              case 1: alert('Feynman Lectures on Physics'); break;
-              case 2: alert('Numerical Recipes in JavaScript'); break;
-              case 3: alert('Truman'); break;
-              case 4: alert('Freakonomics'); break;
-              case 5: alert('The Mezzanine'); break;
-              case 6: alert('The Color of Magic'); break;
-              case 7: alert('The Law of Superheroes'); break;
-            }
-          }
-        });
-        
+
         chart.draw(data, options);
       }
     </script>

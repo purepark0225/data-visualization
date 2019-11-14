@@ -36,22 +36,20 @@
         var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
         
         chart.setAction({
-          id: 'increase',
-          text: 'Read 20 more books',
+          id: 'sample',
+          text: 'See sample book',
           action: function() {
-            data.setTable(chart.getSelection()[0].row, 1,
-                         data.getValue(chart.getSelection()[0].row, 1) + 20);
-            chart.draw(data, options);
-          }
-        });
-
-        chart.setAction({
-          id: 'decrease',
-          text: 'Read 20 fewer books',
-          action: function() {
-            data.setTable(chart.getSelection()[0].row, 1,
-                         data.getValue(chart.getSelection()[0].row, 1) - 20);
-            chart.draw(data, options);
+            selection = chart.getSelection();
+            switch (selection[0].row) {
+              case 0: alert('Ender\'s Game'); break;
+              case 1: alert('Feynman Lectures on Physics'); break;
+              case 2: alert('Numerical Recipes in JavaScript'); break;
+              case 3: alert('Truman'); break;
+              case 4: alert('Freakonomics'); break;
+              case 5: alert('The Mezzanine'); break;
+              case 6: alert('The Color of Magic'); break;
+              case 7: alert('The Law of Superheroes'); break;
+            }
           }
         });
         

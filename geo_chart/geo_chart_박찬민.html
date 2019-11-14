@@ -34,8 +34,27 @@
         };
 
         var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+        
+        chart.setAction({
+          id: 'increase',
+          text: 'Read 20 more books',
+          action: function() {
+            data.setCell(chart.getSelection()[0].row, 1,
+                         data.getValue(chart.getSelection()[0].row, 1) + 20);
+            chart.draw(data, options);
+          }
+        });
 
-
+        chart.setAction({
+          id: 'decrease',
+          text: 'Read 20 fewer books',
+          action: function() {
+            data.setCell(chart.getSelection()[0].row, 1,
+                         data.getValue(chart.getSelection()[0].row, 1) - 20);
+            chart.draw(data, options);
+          }
+        });
+        
         chart.draw(data, options);
       }
     </script>

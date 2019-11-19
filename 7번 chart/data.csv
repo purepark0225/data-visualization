@@ -1,12 +1,11 @@
+Costs,Amount
 Medical expense,9737357
 Copayment for drug,1442157
-간병비용,-
-Paid caregiver fee,787759
-Informal care costs,4034697
-Transportation expenses,1096013
-Supplementary costs,650758
-시간비용,-
+Paid caregiver cost,787759
+Informal care cost,4034697
+Transportation cost,1096013
+Supplementary cost,650758
 Patient time cost,34250
 Protector time cost,239753
-Long-term care costs,2715534
+Long-term care cost,2715534
 Indirect cost,205456

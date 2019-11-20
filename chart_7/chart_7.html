@@ -21,23 +21,18 @@
           draw(arrayData)
         });
       };
-      function draw_1() {
-        var data1 = google.visualization.arrayToDataTable([
-          ['Annual care costs per dementia patient', 'Others'],
-          [20950585, 15680721],
-        ]);
-        var view = new google.visualization.DataView(data);
-
-        var options1 = {}
-
-        var chart1 = new google.visualization.PieChart(document.getElementById('chart_div1'));
-
-        chart1.draw_1(view, options1)
-      };
 
       function draw(arrayData) {
         // (3) convert arrayData into DataTable form
         // then, the remaining process is same to the previous chart drawing assignments.
+        var data1 = google.visualization.arrayToDataTable([
+          ['Annual care costs per dementia patient', 'Others'],
+          [20950585, 15680721],
+        ]);
+        var options1 = {}
+        var chart1 = new google.visualization.PieChart(document.getElementById('chart_div1'));
+        chart1.draw(data1, options1);
+
         var data2 = new google.visualization.arrayToDataTable(arrayData);
         var options2 = {
           title: 'What costs can be reduced by using our service?',

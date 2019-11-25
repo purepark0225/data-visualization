@@ -11,7 +11,7 @@
       // (2) file is read, and the data is saved in arrayData
       // arrayData variable is sent to the function called 'draw'
       function readFile() {
-        filename = "data.csv";
+        filename = "data1.csv";
         $.get(filename, function(csvString) {
           // read a .csv file and save the data in arrayData variable
           var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
@@ -32,7 +32,7 @@
             fontSize: 30,
             fontName: 'Arial'
           },
-          pieSliceText: 'value',
+          pieSliceText: 'percentage',
           legend: {
             position: 'labeled',
             textStyle: {
@@ -47,7 +47,7 @@
           //             8: {offset: 0.15},
           //             9: {offset: 0.15}
           //             }
-          colors: ['#C3E4FD', '#C3E4FD', '#F4AFB3', '#F4AFB3', '#F4AFB3', '#C3E4FD', '#F4AFB3', '#F4AFB3', '#F4AFB3', '#F4AFB3'] // 파스텔 톤으로 이쁘게 바꾸기
+          colors: ['#80b1d3', '#80b1d3', '#fb8072', '#fb8072', '#fb8072', '#80b1d3', '#fb8072', '#fb8072', '#fb8072', '#fb8072'] 
           // pieHole: 0.4
         };
         var chart2 = new google.visualization.PieChart(document.getElementById('chart_div2'));

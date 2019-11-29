@@ -1,11 +1,11 @@
 Costs,Amount
-Medical expense,9640947
-Copayment for drug,1427879
-Supplementary cost,644314
-Informal care cost,3994750
-Long-term care cost,2688648
-Transportation cost,1085161
-Paid caregiver cost,779960
-Protector time cost,237379
-Indirect cost,203422
-Patient time cost,33911
+의료비,9640947
+본인부담약제비,1427879
+보조용품구입비,644314
+비공식 간병비,3994750
+장기요양비용,2688648
+교통비,1085161
+유료 간병인 비용,779960
+보호자 시간비용,237379
+간접비(환자 생산성손실비용),203422
+환자시간비용,33911

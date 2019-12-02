@@ -9,7 +9,7 @@
         'packages':['map'],
         // Note: you will need to get a mapsApiKey for your project.
         // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-        'mapsApiKey': 'AIzaSyC3GXv4X5fskFQxHy7CkYMk0PqEf5Al_pw'
+        'mapsApiKey': 'AIzaSyBpCxToXoWUAMmUM8js5gXezD_8z_6SX1I'
       });
       google.charts.setOnLoadCallback(readFile);
       
@@ -30,7 +30,7 @@
           showInfoWindow: true,
           useMapTypeControl: true,
           mapType: 'terrain',
-          mapTypeIds: ['normal', 'terrain', 'satellite', 'hybrid']
+          mapTypeIds: ['normal', 'terrain', 'satellite', 'hybrid'],
         };
         var chart = new google.visualization.Map(document.getElementById('chart_div'));
         chart.draw(data, options);

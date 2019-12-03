@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="jquery-csv.js"></script>
+    
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['map'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyC3GXv4X5fskFQxHy7CkYMk0PqEf5Al_pw'
+      });
+      google.charts.setOnLoadCallback(readFile);
+      
+      function readFile() {
+        filename = "data3.csv";
+        $.get(filename, function(csvString) {
+          // read a .csv file and save the data in arrayData variable
+          var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+          // send arrayData to 'draw' function
+          drawChart(arrayData)
+        });
+      };
+      function drawChart(arrayData) {
+        var data = google.visualization.arrayToDataTable(arrayData);
+        var options = {
+          zoomLevel: 10,
+          showTooltip: true,
+          showInfoWindow: true,
+          useMapTypeControl: true,
+          mapType: 'StyledMap',
+           maps: {
+          // Your custom mapTypeId holding custom map styles.
+          styledMap: {
+            name: 'StyledMap', // This name will be displayed in the map type control.
+            styles: [
+              {featureType: 'poi.attraction',
+               stylers: [{color: '#fce8b2'}]
+              },
+              {featureType: 'road.highway',
+               stylers: [{hue: '#0277bd'}, {saturation: -50}]
+              },
+              {featureType: 'road.highway',
+               elementType: 'labels.icon',
+               stylers: [{hue: '#000'}, {saturation: 100}, {lightness: 50}]
+              },
+              {featureType: 'landscape',
+               stylers: [{hue: '#259b24'}, {saturation: 10}, {lightness: -22}]
+              }
+        ]}}
+
+        };
+        var chart = new google.visualization.Map(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

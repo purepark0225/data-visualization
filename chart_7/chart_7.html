@@ -34,20 +34,24 @@
           },
           pieSliceText: 'value',
           legend: {
-            position: 'labeled',
+            position: 'none',
             textStyle: {
               fontSize: 20
             }
-//           },        
-//           slices: {  3: {offset: 0.15},
-//                       4: {offset: 0.15},
-//                       5: {offset: 0.15},
-//                       6: {offset: 0.15},
-//                       7: {offset: 0.1},
-//                       8: {offset: 0.1},
-//                       9: {offset: 0.1}
-//                       },
-          colors: ['transparent', 'transparent', 'transparent', '#f2be55', '#f2be55', '#f2be55', '#f2be55', '#f2be55', '#f2be55', '#f2be55'] // #80b1d3, #fb8072
+          },        
+          slices: {  
+                      0: {color:'transparent'},
+                      1: {color:'transparent'},
+                      2: {color:'transparent'},
+                      3: {color: '#f2be55'},
+                      4: {color: '#f2be55'},
+                      5: {color: '#f2be55'},
+                      6: {color: '#f2be55'},
+                      7: {color: '#f2be55'},
+                      8: {color: '#f2be55'},
+                      9: {color: '#f2be55'}
+                      },
+          colors: ['#63615c', '#63615c', '#63615c', '#f2be55', '#f2be55', '#f2be55', '#f2be55', '#f2be55', '#f2be55', '#f2be55'] // #80b1d3, #fb8072
           // pieHole: 0.4
         };
         var chart2 = new google.visualization.PieChart(document.getElementById('chart_div2'));

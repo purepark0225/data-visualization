@@ -11,7 +11,7 @@
       // (2) file is read, and the data is saved in arrayData
       // arrayData variable is sent to the function called 'draw'
       function readFile() {
-        filename = "data.csv";
+        filename = "data_1.csv";
         $.get(filename, function(csvString) {
           // read a .csv file and save the data in arrayData variable
           var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
